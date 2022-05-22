@@ -7,6 +7,7 @@ const mongoose = require('mongoose');           // Mongoose
 require('dotenv').config();      // Config file
 
 
+
 // Expressing app and defining port
 const app = express();
 const port = process.env.PORT || 5000;      // Port for Application
@@ -34,3 +35,4 @@ const connection = mongoose.connection;
 connection.once('open', () => {
     console.log("MongoDB database connection established sucessfully");
 });
+
