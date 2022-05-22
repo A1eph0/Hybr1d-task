@@ -9,11 +9,11 @@ require('dotenv').config();      // Config file
 // Loading routers for models
 const authRouter = require('./routes/auth');
 const buyerRouter = require('./routes/buyer');
+const sellerRouter = require('./routes/seller');
 
 // Expressing app and defining port
 const app = express();
 const port = process.env.PORT || 5000;      // Port for Application
-
 
 // Middleware Setup
 app.use(express.json());            // Using express
@@ -41,3 +41,4 @@ connection.once('open', () => {
 // Using the loaded models
 app.use('/api/auth', authRouter);
 app.use('/api/buyer', buyerRouter);
+app.use('/api/seller', sellerRouter);
