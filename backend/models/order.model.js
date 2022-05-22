@@ -29,7 +29,6 @@ const orderSchema = new Schema({
         type: String,
         required: true,
         trim: true,
-        unique: true,
         lowercase: true,
         validate: [validateEmail, 
             'Error: Please fill a valid email address!']
@@ -38,7 +37,6 @@ const orderSchema = new Schema({
         type: String,
         required: true,
         trim: true,
-        unique: true,
         lowercase: true,
         validate: [validateEmail, 
             'Error: Please fill a valid email address!']

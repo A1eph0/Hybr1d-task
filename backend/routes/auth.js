@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 
-// Adding database entry
+// Registeration
 router.post("/register", async (req, res) => {
     try {
         const {email, password, utype}= req.body;
@@ -68,6 +68,7 @@ router.post("/register", async (req, res) => {
     }
  });
 
+ // Checking token validity
  router.post("/tokenIsValid", async (req, res) =>{
     try {
         const token = req.get("x-auth-token");
