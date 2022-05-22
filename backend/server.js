@@ -6,6 +6,9 @@ const mongoose = require('mongoose');           // Mongoose
 // Load environmental configurations
 require('dotenv').config();      // Config file
 
+// Loading routers for models
+const authRouter = require('./routes/auth');
+
 // Expressing app and defining port
 const app = express();
 const port = process.env.PORT || 5000;      // Port for Application
@@ -33,3 +36,6 @@ const connection = mongoose.connection;
 connection.once('open', () => {
     console.log("MongoDB database connection established sucessfully");
 });
+
+// Using the loaded models
+app.use('/api/auth', authRouter);
