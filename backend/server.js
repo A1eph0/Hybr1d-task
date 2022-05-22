@@ -8,6 +8,7 @@ require('dotenv').config();      // Config file
 
 // Loading routers for models
 const authRouter = require('./routes/auth');
+const buyerRouter = require('./routes/buyer');
 
 // Expressing app and defining port
 const app = express();
@@ -39,3 +40,4 @@ connection.once('open', () => {
 
 // Using the loaded models
 app.use('/api/auth', authRouter);
+app.use('/api/buyer', buyerRouter);
