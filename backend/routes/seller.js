@@ -1,5 +1,6 @@
 // Initiation of router and making the user model
 const router = require('express').Router();
+const User = require("../models/user.model")
 const Catalog = require("../models/catalog.model")
 const Order = require("../models/order.model")
 const auth = require("../middleware/auth");
@@ -10,14 +11,12 @@ router.post("/create-catalog", auth, async (req, res) => {
         const user = await User.findOne({ email: req.user.email })
         if (user.utype === "seller")
         {
-            const newCatalog = new Catalog({
-                seller_email: req.user.email,
-                product_list: req.body.products
-            });
 
             Catalog
-                .updateOne({seller_email: req.user.email}, newCatalog, {upsert: true})
-                .then(() => res.json("Order created!"))
+                .updateOne({seller_email: req.user.email}, 
+                            {seller_email: req.user.email, product_list: req.body.products}, 
+                            {upsert: true})
+                .then(() => res.json("Catolog created!"))
                 .catch(err => res.status(400).json('Error: ' + err))
         }
 
