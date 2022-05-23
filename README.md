@@ -41,5 +41,5 @@ $ npm start
 Alternatively, you can run the following:
 ```
 $ npm install
-$ npm server
+$ npm run server
 ```
