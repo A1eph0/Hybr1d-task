@@ -43,3 +43,5 @@ Alternatively, you can run the following:
 $ npm install
 $ npm run server
 ```
+
+And then Enjoy!!
