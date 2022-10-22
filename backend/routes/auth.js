@@ -11,7 +11,7 @@ router.post("/register", async (req, res) => {
         const {email, password, utype}= req.body;
 
         if (!email || !password || !utype)
-            return res.status(400).json({msg: "Not all fields have been entered."})
+            return res.status(400).json({msg: "Not all fields have been entered."}) // 
         
             const existingUser = await User.findOne({email: email})
         if (existingUser)
@@ -38,7 +38,7 @@ router.post("/register", async (req, res) => {
 });
 
 // Login
- router.post("/login", async (req,res) => {
+ router.post("/login", async (req,res) => {                 // LOGin
      try{
          const {email, password} = req.body;
 
